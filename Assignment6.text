@@ -1,0 +1,23 @@
+Q.6 Build a basic HTML page with a title and a few headings.
+Ans. 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Web Page</title>
+</head>
+<body>
+    <h1>Welcome to My Website</h1>
+
+    <h2>About Me</h2>
+    <p>This is my first HTML webpage.</p>
+
+    <h2>My Learning Journey</h2>
+    <h3>Learning HTML</h3>
+    <h3>Learning CSS</h3>
+
+    <h2>Contact</h2>
+    <p>Thank you for visiting my website!</p>
+</body>
+</html>
