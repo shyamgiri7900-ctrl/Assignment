@@ -1,2 +1,0 @@
-Q.2 Submit a screenshot proving VS Code, Node.js, and Live Server are installed correctly.
-ANS.

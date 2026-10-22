@@ -1,7 +1,7 @@
-Q  Complete a short terminal-navigation practice sheet.
+Q.3 Complete a short terminal-navigation practice sheet.
 
 
-Here is a short terminal-navigation practice sheet with commands and solutions.
+Ans. Here is a short terminal-navigation practice sheet with commands and solutions.
 Terminal Navigation Practice Sheet
 No.	Task	Command / Answer
 1	Show the current directory	pwd
