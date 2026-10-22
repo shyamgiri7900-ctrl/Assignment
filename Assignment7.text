@@ -1,0 +1,54 @@
+Q.7 Design a simple resume-style page using only text elements.
+Ans. 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+</head>
+<body>
+
+    <h1>Your Name</h1>
+    <p>Email: yourname@example.com</p>
+    <p>Phone: +91 1234567890</p>
+    <p>Address: Your City, India</p>
+
+    <hr>
+
+    <h2>Career Objective</h2>
+    <p>
+        To learn new skills and build a successful career
+        in the field of technology.
+    </p>
+
+    <h2>Education</h2>
+    <h3>Class 12</h3>
+    <p>School Name | Year of Completion</p>
+
+    <h3>Graduation</h3>
+    <p>College Name | Pursuing</p>
+
+    <h2>Skills</h2>
+    <p>HTML</p>
+    <p>Basic Computer Knowledge</p>
+    <p>Communication</p>
+
+    <h2>Projects</h2>
+    <h3>My First Webpage</h3>
+    <p>Created a basic webpage using HTML.</p>
+
+    <h2>Personal Details</h2>
+    <p>Languages: Hindi, English</p>
+    <p>Hobbies: Learning new skills, Reading</p>
+
+    <h2>Declaration</h2>
+    <p>
+        I hereby declare that the information provided
+        above is true to the best of my knowledge.
+    </p>
+
+    <p>Signature: Your Name</p>
+
+</body>
+</html>
