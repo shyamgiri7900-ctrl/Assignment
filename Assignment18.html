@@ -1,0 +1,164 @@
+Q.18 Build an e-commerce-style product size-chart table  
+Ans. 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Size Chart</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 30px 15px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px #00000015;
+        }
+
+        h1 {
+            text-align: center;
+            color: #222;
+        }
+
+        p {
+            text-align: center;
+            color: #666;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        caption {
+            font-weight: bold;
+            padding: 12px;
+            color: #333;
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+
+        thead {
+            background-color: #222;
+            color: white;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:hover {
+            background-color: #e6f0ff;
+        }
+
+        .size {
+            font-weight: bold;
+            color: #1769aa;
+        }
+
+        .note {
+            margin-top: 20px;
+            padding: 12px;
+            background: #fff7e6;
+            border-left: 4px solid #f0ad4e;
+            text-align: left;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <h1>Product Size Chart</h1>
+        <p>Men's Casual T-Shirt — Find Your Perfect Fit</p>
+
+        <div class="table-wrapper">
+            <table>
+                <caption>
+                    T-Shirt Size Guide (Measurements in Inches)
+                </caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col">Size</th>
+                        <th scope="col">Chest</th>
+                        <th scope="col">Shoulder</th>
+                        <th scope="col">Length</th>
+                        <th scope="col">Sleeve</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th scope="row" class="size">S</th>
+                        <td>36</td>
+                        <td>16</td>
+                        <td>26</td>
+                        <td>8</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row" class="size">M</th>
+                        <td>38</td>
+                        <td>17</td>
+                        <td>27</td>
+                        <td>8.5</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row" class="size">L</th>
+                        <td>40</td>
+                        <td>18</td>
+                        <td>28</td>
+                        <td>9</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row" class="size">XL</th>
+                        <td>42</td>
+                        <td>19</td>
+                        <td>29</td>
+                        <td>9.5</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row" class="size">XXL</th>
+                        <td>44</td>
+                        <td>20</td>
+                        <td>30</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <aside class="note">
+            <strong>Note:</strong> These are sample measurements.
+            Actual sizes may vary by brand and product.
+            Please check the product measurements before ordering.
+        </aside>
+    </main>
+</body>
+</html>
