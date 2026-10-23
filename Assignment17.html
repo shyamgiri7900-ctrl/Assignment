@@ -1,0 +1,211 @@
+Q.17 Build a job-application style form using every input type covered.
+Ans. <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f5f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header, main, footer {
+            max-width: 700px;
+            margin: 20px auto;
+        }
+
+        header, footer {
+            text-align: center;
+        }
+
+        form {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        label {
+            display: inline-block;
+            margin: 8px 0;
+        }
+
+        input:not([type="radio"]):not([type="checkbox"]):not([type="range"]):not([type="color"]):not([type="file"]):not([type="hidden"]),
+        select, textarea {
+            max-width: 100%;
+            padding: 9px;
+            margin: 5px 0;
+        }
+
+        .full-width {
+            width: 95%;
+        }
+
+        button {
+            padding: 10px 18px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Job Application Form</h1>
+    <p>Apply for your preferred position</p>
+</header>
+
+<main>
+    <form action="#" method="post" enctype="multipart/form-data">
+
+        <input type="hidden" name="form_type" value="job_application">
+
+        <fieldset>
+            <legend>Personal Details</legend>
+
+            <label for="fullname">Full Name:</label><br>
+            <input class="full-width" type="text" id="fullname"
+                   name="fullname" placeholder="Enter full name" required>
+            <br>
+
+            <label for="email">Email:</label><br>
+            <input class="full-width" type="email" id="email"
+                   name="email" placeholder="name@example.com" required>
+            <br>
+
+            <label for="password">Create Password:</label><br>
+            <input type="password" id="password" name="password"
+                   minlength="8" required>
+            <br>
+
+            <label for="phone">Phone Number:</label><br>
+            <input type="tel" id="phone" name="phone"
+                   placeholder="Enter phone number" required>
+            <br>
+
+            <label for="dob">Date of Birth:</label><br>
+            <input type="date" id="dob" name="dob">
+            <br>
+
+            <p>Gender:</p>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label>
+            <br>
+
+            <label for="website">Portfolio Website:</label><br>
+            <input class="full-width" type="url" id="website"
+                   name="website" placeholder="https://example.com">
+            <br>
+
+            <label for="address">Address:</label><br>
+            <textarea class="full-width" id="address" name="address"
+                      rows="3" placeholder="Enter your address"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Job Details</legend>
+
+            <label for="position">Position Applied For:</label><br>
+            <select id="position" name="position" required>
+                <option value="">-- Select Position --</option>
+                <option value="web-developer">Web Developer</option>
+                <option value="designer">Web Designer</option>
+                <option value="software-developer">Software Developer</option>
+                <option value="intern">Intern</option>
+            </select>
+            <br>
+
+            <label for="experience">Years of Experience:</label><br>
+            <input type="number" id="experience" name="experience"
+                   min="0" max="50" value="0">
+            <br>
+
+            <label for="joining">Available Joining Date:</label><br>
+            <input type="datetime-local" id="joining" name="joining">
+            <br>
+
+            <label for="interview-time">Preferred Interview Time:</label><br>
+            <input type="time" id="interview-time" name="interview_time">
+            <br>
+
+            <label for="available-month">Available From (Month):</label><br>
+            <input type="month" id="available-month" name="available_month">
+            <br>
+
+            <label for="preferred-week">Preferred Interview Week:</label><br>
+            <input type="week" id="preferred-week" name="preferred_week">
+            <br>
+
+            <label for="skills">Search Your Main Skill:</label><br>
+            <input class="full-width" type="search" id="skills"
+                   name="skills" placeholder="e.g. HTML, Java, Python">
+            <br>
+
+            <label for="salary">Expected Annual Salary (₹):</label><br>
+            <input type="number" id="salary" name="salary"
+                   min="0" placeholder="Enter expected salary">
+            <br>
+
+            <label for="confidence">Skill Confidence (1–10):</label><br>
+            <input type="range" id="confidence" name="confidence"
+                   min="1" max="10" value="5">
+            <br>
+
+            <label for="fav-color">Choose a Portfolio Theme Color:</label><br>
+            <input type="color" id="fav-color" name="theme_color"
+                   value="#2457a7">
+            <br>
+
+            <label for="resume">Upload Resume:</label><br>
+            <input type="file" id="resume" name="resume"
+                   accept=".pdf,.doc,.docx">
+            <br>
+
+            <label for="cover-letter">Cover Letter:</label><br>
+            <textarea class="full-width" id="cover-letter"
+                      name="cover_letter" rows="5"
+                      placeholder="Tell us why you are suitable for this role"></textarea>
+            <br>
+
+            <input type="checkbox" id="relocation" name="relocation"
+                   value="yes">
+            <label for="relocation">Willing to relocate</label>
+            <br>
+
+            <input type="checkbox" id="accurate" name="accuracy"
+                   value="confirmed" required>
+            <label for="accurate">
+                I confirm that my information is accurate.
+            </label>
+        </fieldset>
+
+        <button type="submit">Submit Application</button>
+        <button type="reset">Clear Form</button>
+
+    </form>
+</main>
+
+<footer>
+    <p>&copy; 2026 Job Application Portal</p>
+</footer>
+
+</body>
+</html>
