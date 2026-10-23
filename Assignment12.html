@@ -1,0 +1,183 @@
+Q.12 Ensure every image on the portfolio page has a meaningful alt attribute.
+Ans. 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anshu's Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header, footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        nav {
+            background: #1e40af;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        nav a:hover {
+            color: #facc15;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 25px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #1e40af;
+            margin-bottom: 12px;
+        }
+
+        .profile {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-top: 15px;
+        }
+
+        .project {
+            background: #eff6ff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .project img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+            border-radius: 6px;
+        }
+
+        ul {
+            padding-left: 25px;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            section {
+                margin: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="home">
+        <h1>Hi, I'm Anshu</h1>
+        <p>Student | Beginner Web Developer</p>
+
+        <img
+            class="profile"
+            src="https://placehold.co/140x140"
+            alt="Placeholder profile picture for Anshu"
+        >
+    </header>
+
+    <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                Hello! I'm Anshu. I am learning web development
+                and programming. I enjoy creating websites and
+                exploring new technologies.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>My Skills</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS Basics</li>
+                <li>Java Programming Basics</li>
+                <li>Problem Solving</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+
+            <div class="project">
+                <h3>Personal Introduction Page</h3>
+                <img
+                    src="https://placehold.co/350x180"
+                    alt="Placeholder preview image for the personal introduction webpage"
+                >
+                <p>A webpage introducing myself using HTML.</p>
+            </div>
+
+            <div class="project">
+                <h3>Portfolio Website</h3>
+                <img
+                    src="https://placehold.co/350x180"
+                    alt="Placeholder preview image for a portfolio website with navigation links"
+                >
+                <p>A portfolio website with working internal navigation.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Email: shyamgiri7900@gmail.com</p>
+            <p>Location: Uttar Pradesh, India</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Anshu | My Portfolio</p>
+    </footer>
+
+</body>
+</html>
