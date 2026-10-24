@@ -1,0 +1,93 @@
+Q.24 Create a small design-token stylesheet (colours, font sizes) using CSS variables.
+```css
+/* ==============================
+   DESIGN TOKENS
+   ============================== */
+
+:root {
+    /* Colour palette */
+    --color-primary: #17324D;
+    --color-secondary: #2878A5;
+    --color-accent: #A9D9F2;
+
+    --color-background: #F3F6FA;
+    --color-surface: #FFFFFF;
+
+    --color-text: #263445;
+    --color-text-muted: #68798A;
+    --color-border: #DCE8F0;
+
+    /* Font families */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+
+    /* Font sizes */
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;
+    --font-size-base: 16px;
+    --font-size-lg: 20px;
+    --font-size-xl: 28px;
+    --font-size-2xl: 36px;
+
+    /* Spacing */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-6: 24px;
+    --space-8: 32px;
+
+    /* Layout */
+    --content-width: 850px;
+    --radius-sm: 5px;
+    --radius-lg: 12px;
+
+    /* Shadows */
+    --shadow-card: 0 8px 30px rgba(23, 50, 77, 0.10);
+}
+
+/* ==============================
+   BASE STYLES
+   ============================== */
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+}
+
+h1 {
+    font-size: var(--font-size-2xl);
+}
+
+h2 {
+    font-size: var(--font-size-xl);
+}
+
+p {
+    font-size: var(--font-size-base);
+}
+
+.card {
+    max-width: var(--content-width);
+    padding: var(--space-8);
+    background-color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+}
+
+button {
+    padding: var(--space-2) var(--space-4);
+    color: var(--color-surface);
+    background-color: var(--color-secondary);
+    border: none;
+    border-radius: var(--radius-sm);
+}
+```
