@@ -1,0 +1,108 @@
+Q.22 Style a page using at least four different selector types correctly.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A webpage demonstrating different CSS selectors">
+    <title>CSS Selectors Practice</title>
+
+    <style>
+        /* 1. Universal Selector */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* 2. Element Selector */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* 3. Class Selector */
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 650px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #cccccc;
+        }
+
+        /* 4. ID Selector */
+        #main-heading {
+            color: #2563eb;
+            text-align: center;
+        }
+
+        /* 5. Group Selector */
+        h2, h3 {
+            color: #0f766e;
+        }
+
+        /* 6. Descendant Selector */
+        .card p {
+            line-height: 1.7;
+        }
+
+        /* 7. Pseudo-class Selector */
+        a:hover {
+            color: #dc2626;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        button {
+            background-color: #2563eb;
+            color: white;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="main-heading">CSS Selectors Practice</h1>
+
+    <div class="card">
+        <h2>About CSS</h2>
+        <p>
+            CSS stands for Cascading Style Sheets.
+            It is used to style HTML webpages with colors,
+            spacing, fonts, and layouts.
+        </p>
+
+        <h3>Types of Selectors</h3>
+        <ul>
+            <li>Universal Selector (*)</li>
+            <li>Element Selector (body)</li>
+            <li>Class Selector (.card)</li>
+            <li>ID Selector (#main-heading)</li>
+            <li>Group Selector (h2, h3)</li>
+            <li>Descendant Selector (.card p)</li>
+            <li>Pseudo-class Selector (a:hover)</li>
+        </ul>
+
+        <p>
+            Learn more about
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors">
+                CSS selectors
+            </a>.
+        </p>
+
+        <button type="button" onclick="alert('Great job learning CSS!')">
+            Click Me
+        </button>
+    </div>
+
+</body>
+</html>
