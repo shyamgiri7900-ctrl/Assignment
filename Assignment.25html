@@ -1,0 +1,6 @@
+Q.25 Submit the styled multi-page project with a short note on design choices.
+### Design Choices
+
+The project uses a navy blue, light blue, and white colour palette to create a clean, professional appearance. Poppins is used for headings, while Open Sans improves readability for body text. CSS custom properties store reusable colours, font sizes, spacing, and shadows to maintain consistency across all four pages. Responsive CSS adapts the layout to mobile and desktop screens. Semantic HTML, labelled form fields, and visible keyboard focus styles improve accessibility.
+
+The registration and contact forms are front-end demonstrations and require a back-end service to process submissions. 
