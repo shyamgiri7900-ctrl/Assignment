@@ -1,0 +1,91 @@
+Q.41 Add at least two breakpoints to an earlier project and test on multiple screen sizes.
+
+/* Base layout: Desktop */
+.layout {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  grid-template-rows: 75px 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar main";
+  min-height: 100vh;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+/* Breakpoint 1: Tablets and smaller laptops */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 190px minmax(0, 1fr);
+  }
+
+  .main {
+    padding: 20px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+/* Breakpoint 2: Mobile phones */
+@media (max-width: 600px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main";
+  }
+
+  .header {
+    flex-wrap: wrap;
+    padding: 16px;
+  }
+
+  .search {
+    width: 100%;
+    order: 2;
+  }
+
+  .sidebar {
+    padding: 18px;
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .sidebar label {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .main {
+    padding: 16px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .product-card img {
+    height: 145px;
+  }
+}
+
+/* Breakpoint 3: Very small phones */
+@media (max-width: 350px) {
+  .product-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .main h1 {
+    font-size: 22px;
+  }
+}
