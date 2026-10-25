@@ -1,0 +1,385 @@
+Q.39 Build a responsive product grid with a header and sidebar using Grid.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Product Store</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      color: #1e293b;
+    }
+
+    /* Main page layout */
+    .layout {
+      display: grid;
+      min-height: 100vh;
+      grid-template-columns: 230px 1fr;
+      grid-template-rows: 75px 1fr;
+      grid-template-areas:
+        "header header"
+        "sidebar main";
+    }
+
+    /* Header */
+    .header {
+      grid-area: header;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 28px;
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #5145cd;
+    }
+
+    .search {
+      width: min(350px, 45%);
+      padding: 11px 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      grid-area: sidebar;
+      padding: 25px 20px;
+      background: white;
+      border-right: 1px solid #e2e8f0;
+    }
+
+    .sidebar h3 {
+      margin-bottom: 18px;
+    }
+
+    .sidebar label {
+      display: block;
+      margin-bottom: 16px;
+      color: #475569;
+      cursor: pointer;
+    }
+
+    .sidebar input {
+      margin-right: 8px;
+    }
+
+    /* Main product area */
+    .main {
+      grid-area: main;
+      min-width: 0;
+      padding: 28px;
+    }
+
+    .main h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .description {
+      color: #64748b;
+      margin-bottom: 25px;
+    }
+
+    /* Responsive product grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+      gap: 22px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px #0000000a;
+      transition: transform 0.25s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .product-card img {
+      display: block;
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 17px;
+    }
+
+    .product-info h2 {
+      font-size: 18px;
+      margin-bottom: 9px;
+    }
+
+    .product-info p {
+      color: #64748b;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      color: #15803d;
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+
+    .buy-btn {
+      width: 100%;
+      border: none;
+      border-radius: 7px;
+      padding: 11px;
+      color: white;
+      background: #5145cd;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .buy-btn:hover {
+      background: #3d32a8;
+    }
+
+    /* Tablet */
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 190px 1fr;
+      }
+
+      .main {
+        padding: 20px;
+      }
+
+      .product-grid {
+        grid-template-columns:
+          repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+          "header"
+          "sidebar"
+          "main";
+      }
+
+      .header {
+        padding: 16px;
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      .search {
+        width: 100%;
+        order: 2;
+      }
+
+      .sidebar {
+        padding: 18px;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .sidebar label {
+        display: inline-block;
+        margin: 0 12px 8px 0;
+      }
+
+      .main {
+        padding: 18px;
+      }
+
+      .main h1 {
+        font-size: 24px;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .product-card img {
+        height: 145px;
+      }
+
+      .product-info {
+        padding: 12px;
+      }
+
+      .product-info h2 {
+        font-size: 16px;
+      }
+
+      .price {
+        font-size: 17px;
+      }
+    }
+
+    @media (max-width: 350px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="layout">
+
+    <header class="header">
+      <div class="logo">ShopZone</div>
+      <input
+        class="search"
+        type="search"
+        placeholder="Search products..."
+        aria-label="Search products"
+      >
+    </header>
+
+    <aside class="sidebar">
+      <h3>Categories</h3>
+
+      <label>
+        <input type="checkbox" name="category" value="electronics">
+        Electronics
+      </label>
+
+      <label>
+        <input type="checkbox" name="category" value="fashion">
+        Fashion
+      </label>
+
+      <label>
+        <input type="checkbox" name="category" value="accessories">
+        Accessories
+      </label>
+
+      <label>
+        <input type="checkbox" name="category" value="home">
+        Home & Living
+      </label>
+    </aside>
+
+    <main class="main">
+      <h1>Our Products</h1>
+      <p class="description">
+        Discover our latest products and special offers.
+      </p>
+
+      <section class="product-grid">
+
+        <article class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"
+            alt="Wireless headphones"
+          >
+          <div class="product-info">
+            <h2>Headphones</h2>
+            <p>High-quality sound for everyday listening.</p>
+            <div class="price">₹1,499</div>
+            <button class="buy-btn" type="button">View Product</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"
+            alt="Classic wristwatch"
+          >
+          <div class="product-info">
+            <h2>Wristwatch</h2>
+            <p>A timeless accessory for any occasion.</p>
+            <div class="price">₹2,299</div>
+            <button class="buy-btn" type="button">View Product</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"
+            alt="Red sports shoe"
+          >
+          <div class="product-info">
+            <h2>Sports Shoes</h2>
+            <p>Comfortable footwear for active days.</p>
+            <div class="price">₹1,899</div>
+            <button class="buy-btn" type="button">View Product</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500"
+            alt="Vintage camera"
+          >
+          <div class="product-info">
+            <h2>Camera</h2>
+            <p>Capture and preserve your best moments.</p>
+            <div class="price">₹5,499</div>
+            <button class="buy-btn" type="button">View Product</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=500"
+            alt="Perfume bottle"
+          >
+          <div class="product-info">
+            <h2>Perfume</h2>
+            <p>A fresh fragrance for everyday use.</p>
+            <div class="price">₹999</div>
+            <button class="buy-btn" type="button">View Product</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=500"
+            alt="Fashion clothing"
+          >
+          <div class="product-info">
+            <h2>Fashion Wear</h2>
+            <p>Refresh your wardrobe with modern styles.</p>
+            <div class="price">₹1,299</div>
+            <button class="buy-btn" type="button">View Product</button>
+          </div>
+        </article>
+
+      </section>
+    </main>
+
+  </div>
+
+</body>
+</html>
