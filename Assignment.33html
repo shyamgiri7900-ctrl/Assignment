@@ -1,0 +1,249 @@
+Q.33 Build a product-listing style layout using flex-wrap.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            background: #1e293b;
+            color: white;
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        header h1 {
+            font-size: 26px;
+        }
+
+        header p {
+            color: #cbd5e1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 35px 20px;
+        }
+
+        .section-title {
+            margin-bottom: 25px;
+        }
+
+        /* Product listing using Flexbox */
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 24px;
+        }
+
+        .product-card {
+            flex: 1 1 240px;
+            max-width: 280px;
+            min-width: 0;
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px #00000010;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 22px #00000018;
+        }
+
+        .product-image {
+            height: 190px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 65px;
+            background: #e0e7ff;
+        }
+
+        .product-card:nth-child(2) .product-image {
+            background: #fce7f3;
+        }
+
+        .product-card:nth-child(3) .product-image {
+            background: #dcfce7;
+        }
+
+        .product-card:nth-child(4) .product-image {
+            background: #fef3c7;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        .buy-btn {
+            display: block;
+            width: 100%;
+            padding: 11px;
+            background: #4f46e5;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .buy-btn:hover {
+            background: #3730a3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 22px;
+            background: #1e293b;
+            color: white;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+            }
+
+            .container {
+                padding: 25px 15px;
+            }
+
+            .product-card {
+                flex: 1 1 100%;
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>ShopZone</h1>
+        <p>Find your favourite products</p>
+    </header>
+
+    <main class="container">
+
+        <h2 class="section-title">Featured Products</h2>
+
+        <section class="product-list">
+
+            <article class="product-card">
+                <div class="product-image" role="img"
+                     aria-label="Headphones">🎧</div>
+                <div class="product-info">
+                    <h3>Wireless Headphones</h3>
+                    <p class="description">
+                        Enjoy clear sound and wireless freedom.
+                    </p>
+                    <p class="price">₹1,499</p>
+                    <button class="buy-btn" type="button"
+                            onclick="alert('Headphones selected!')">
+                        View Product
+                    </button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image" role="img"
+                     aria-label="Smartphone">📱</div>
+                <div class="product-info">
+                    <h3>Smartphone</h3>
+                    <p class="description">
+                        A smart device for everyday use.
+                    </p>
+                    <p class="price">₹12,999</p>
+                    <button class="buy-btn" type="button"
+                            onclick="alert('Smartphone selected!')">
+                        View Product
+                    </button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image" role="img"
+                     aria-label="Smart watch">⌚</div>
+                <div class="product-info">
+                    <h3>Smart Watch</h3>
+                    <p class="description">
+                        Keep track of time and daily activities.
+                    </p>
+                    <p class="price">₹2,499</p>
+                    <button class="buy-btn" type="button"
+                            onclick="alert('Smart Watch selected!')">
+                        View Product
+                    </button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image" role="img"
+                     aria-label="Laptop">💻</div>
+                <div class="product-info">
+                    <h3>Personal Laptop</h3>
+                    <p class="description">
+                        A useful companion for study and work.
+                    </p>
+                    <p class="price">₹39,999</p>
+                    <button class="buy-btn" type="button"
+                            onclick="alert('Laptop selected!')">
+                        View Product
+                    </button>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ShopZone. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
