@@ -1,0 +1,286 @@
+Q.38 Recreate a simple dashboard layout using named grid areas.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Layout</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f5f9;
+      color: #1e293b;
+    }
+
+    /* Named Grid Areas */
+    .dashboard {
+      display: grid;
+      min-height: 100vh;
+      gap: 16px;
+      padding: 16px;
+
+      grid-template-columns: 220px 1fr;
+      grid-template-rows: 70px auto 1fr;
+
+      grid-template-areas:
+        "sidebar header"
+        "sidebar stats"
+        "sidebar content";
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      background: #1e293b;
+      color: white;
+      padding: 25px 18px;
+      border-radius: 12px;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #cbd5e1;
+      text-decoration: none;
+      padding: 13px 10px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+
+    .sidebar a:hover {
+      background: #334155;
+      color: white;
+    }
+
+    .header {
+      grid-area: header;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .stats {
+      grid-area: stats;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px #00000008;
+    }
+
+    .card p {
+      color: #64748b;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 28px;
+    }
+
+    .content {
+      grid-area: content;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .panel {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      min-width: 0;
+    }
+
+    .panel h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .chart {
+      height: 220px;
+      display: flex;
+      justify-content: space-around;
+      align-items: end;
+      gap: 12px;
+      padding: 15px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .bar {
+      width: 12%;
+      background: #6366f1;
+      border-radius: 6px 6px 0 0;
+    }
+
+    .activity-item {
+      padding: 14px 0;
+      border-bottom: 1px solid #e2e8f0;
+      line-height: 1.5;
+    }
+
+    .activity-item:last-child {
+      border-bottom: none;
+    }
+
+    .muted {
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    /* Tablet and mobile */
+    @media (max-width: 900px) {
+      .dashboard {
+        grid-template-columns: 180px 1fr;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .dashboard {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+          "header"
+          "sidebar"
+          "stats"
+          "content";
+      }
+
+      .sidebar {
+        padding: 15px;
+      }
+
+      .sidebar h2 {
+        margin-bottom: 12px;
+      }
+
+      .sidebar nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+
+      .sidebar a {
+        margin: 0;
+      }
+
+      .header {
+        flex-wrap: wrap;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .content {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="dashboard">
+
+    <aside class="sidebar">
+      <h2>MyPanel</h2>
+      <nav>
+        <a href="#overview">Dashboard</a>
+        <a href="#stats">Analytics</a>
+        <a href="#activity">Activity</a>
+        <a href="#settings">Settings</a>
+      </nav>
+    </aside>
+
+    <header class="header">
+      <h1>Dashboard</h1>
+      <p>Welcome back, User!</p>
+    </header>
+
+    <section class="stats" id="stats">
+      <article class="card">
+        <p>Total Users</p>
+        <h3>1,250</h3>
+      </article>
+
+      <article class="card">
+        <p>Total Sales</p>
+        <h3>₹45K</h3>
+      </article>
+
+      <article class="card">
+        <p>Orders</p>
+        <h3>320</h3>
+      </article>
+    </section>
+
+    <main class="content" id="overview">
+      <section class="panel">
+        <h2>Weekly Performance</h2>
+
+        <div class="chart" role="img"
+             aria-label="Illustrative bar chart showing weekly performance">
+          <div class="bar" style="height: 40%"></div>
+          <div class="bar" style="height: 65%"></div>
+          <div class="bar" style="height: 50%"></div>
+          <div class="bar" style="height: 85%"></div>
+          <div class="bar" style="height: 60%"></div>
+          <div class="bar" style="height: 95%"></div>
+        </div>
+        <p class="muted">Illustrative weekly data</p>
+      </section>
+
+      <section class="panel" id="activity">
+        <h2>Recent Activity</h2>
+
+        <div class="activity-item">
+          <strong>New user registered</strong>
+          <p class="muted">10 minutes ago</p>
+        </div>
+
+        <div class="activity-item">
+          <strong>Order completed</strong>
+          <p class="muted">30 minutes ago</p>
+        </div>
+
+        <div class="activity-item">
+          <strong>New report generated</strong>
+          <p class="muted">1 hour ago</p>
+        </div>
+      </section>
+    </main>
+
+  </div>
+
+</body>
+</html>
+
+ 
