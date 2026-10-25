@@ -1,0 +1,237 @@
+Q.35 Submit the finished Flexbox landing-page section. Module 8: CSS Grid
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Landing Page</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #172033;
+      background: #f5f7ff;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background: white;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #5145cd;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #172033;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      padding: 80px 8%;
+      min-height: 430px;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #626b7d;
+      margin-bottom: 28px;
+      max-width: 500px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn-primary {
+      background: #5145cd;
+      color: white;
+    }
+
+    .btn-secondary {
+      border: 1px solid #5145cd;
+      color: #5145cd;
+    }
+
+    .hero-image {
+      flex: 1;
+      min-height: 260px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #c8c4ff, #e4e1ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 90px;
+    }
+
+    /* Features */
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      padding: 35px 8% 65px;
+    }
+
+    .feature-card {
+      flex: 1 1 220px;
+      max-width: 340px;
+      padding: 25px;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 5px 20px #1720330d;
+    }
+
+    .feature-card h3 {
+      margin: 12px 0;
+    }
+
+    .feature-card p {
+      color: #626b7d;
+      line-height: 1.6;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 700px) {
+      .navbar {
+        justify-content: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 6%;
+      }
+
+      .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-image {
+        width: 100%;
+        min-height: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="logo">FlexStart</div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Build Something Amazing</h1>
+        <p>
+          Create modern, responsive websites with clean design
+          and flexible layouts. Start your next big idea today.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#features" class="btn btn-primary">
+            Get Started
+          </a>
+          <a href="#about" class="btn btn-secondary">
+            Learn More
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-image" aria-label="Creative design illustration">
+        🚀
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <article class="feature-card">
+        <div>🎨</div>
+        <h3>Modern Design</h3>
+        <p>Enjoy a clean layout with attractive colours and spacing.</p>
+      </article>
+
+      <article class="feature-card" id="about">
+        <div>📱</div>
+        <h3>Fully Responsive</h3>
+        <p>Layouts adapt to mobile, tablet and desktop screens.</p>
+      </article>
+
+      <article class="feature-card" id="contact">
+        <div>⚡</div>
+        <h3>Fast & Simple</h3>
+        <p>Use straightforward HTML and CSS to build your page.</p>
+      </article>
+    </section>
+  </main>
+
+</body>
+</html>
