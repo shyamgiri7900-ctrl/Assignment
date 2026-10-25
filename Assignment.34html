@@ -1,0 +1,232 @@
+Q.34 Build a responsive Navbar + Hero section using Flexbox.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar and Hero</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #1e293b;
+            background: #f8fafc;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px 8%;
+            background: white;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #4f46e5;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #334155;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #4f46e5;
+        }
+
+        .nav-btn,
+        .hero-btn {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            text-decoration: none;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 520px;
+            padding: 70px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 45px;
+            flex-wrap: wrap;
+            background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+        }
+
+        .hero-content {
+            flex: 1 1 300px;
+            max-width: 550px;
+        }
+
+        .hero-content .tag {
+            display: inline-block;
+            color: #4338ca;
+            background: #e0e7ff;
+            padding: 8px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(36px, 5vw, 58px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            color: #4f46e5;
+        }
+
+        .hero-content p {
+            font-size: 17px;
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+        .hero-image {
+            flex: 1 1 250px;
+            min-width: 0;
+            min-height: 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #c7d2fe;
+            border-radius: 30px;
+            font-size: clamp(90px, 15vw, 150px);
+        }
+
+        .hero-btn:hover,
+        .nav-btn:hover {
+            background: #3730a3;
+        }
+
+        /* Responsive design */
+        @media (max-width: 650px) {
+            .navbar {
+                flex-direction: column;
+                padding: 20px;
+                gap: 18px;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 16px;
+            }
+
+            .nav-btn {
+                display: none;
+            }
+
+            .hero {
+                padding: 50px 22px;
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-image {
+                width: 100%;
+                min-height: 220px;
+                flex-basis: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="logo">WebCraft.</div>
+
+        <nav aria-label="Main navigation">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <a href="#contact" class="nav-btn">Get Started</a>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+                <span class="tag">Welcome to WebCraft</span>
+
+                <h1>Build Your <span>Dream Website</span></h1>
+
+                <p>
+                    Create modern, responsive and beautiful websites
+                    using the latest web technologies. Turn your
+                    creative ideas into reality.
+                </p>
+
+                <a href="#services" class="hero-btn">
+                    Explore Services →
+                </a>
+            </div>
+
+            <div class="hero-image"
+                 role="img"
+                 aria-label="Laptop representing web development">
+                💻
+            </div>
+
+        </section>
+
+        <section id="services" style="padding: 40px 20px; text-align: center;">
+            <h2>Our Services</h2>
+            <p style="margin-top: 10px;">Web Design | Development | Responsive Layouts</p>
+        </section>
+
+        <section id="about" style="padding: 20px; text-align: center;">
+            <h2>About Us</h2>
+            <p style="margin-top: 10px;">We build simple and user-friendly web experiences.</p>
+        </section>
+
+        <section id="contact" style="padding: 20px; text-align: center;">
+            <h2>Contact Us</h2>
+            <p style="margin-top: 10px;">Let's build something great together.</p>
+        </section>
+    </main>
+
+</body>
+</html>
