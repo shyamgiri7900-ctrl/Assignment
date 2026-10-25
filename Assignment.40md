@@ -1,0 +1,8 @@
+Q.40 Submit the finished Grid-based project.
+**Project Title:** Responsive Product Store Using CSS Grid
+
+**Description:** Created a responsive e-commerce product page using HTML5 and CSS Grid. The project includes a header with a search field, a sidebar with category filters, and a product grid with images, descriptions, prices, and buttons. CSS Grid named areas and media queries are used to make the layout responsive across desktop, tablet, and mobile screens.
+
+**Technologies Used:** HTML5, CSS3, CSS Grid, Media Queries.
+
+**Status:** Code prepared; browser testing and portal submission pending.
