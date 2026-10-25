@@ -1,0 +1,134 @@
+Q.27 Create three differently styled card variants using border-radius and backgrounds.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Card Variants</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .card {
+            width: 280px;
+            padding: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card h2 {
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .card button {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Variant 1: Simple Card */
+        .card-simple {
+            background: white;
+            border: 1px solid #dbeafe;
+            border-radius: 12px;
+            color: #1e293b;
+            box-shadow: 0 4px 12px #00000010;
+        }
+
+        .card-simple button {
+            background: #2563eb;
+            color: white;
+        }
+
+        /* Variant 2: Gradient Card */
+        .card-gradient {
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            border-radius: 25px;
+            color: white;
+            box-shadow: 0 8px 20px #6366f155;
+        }
+
+        .card-gradient button {
+            background: white;
+            color: #6d28d9;
+            border-radius: 20px;
+        }
+
+        /* Variant 3: Dark Card */
+        .card-dark {
+            background: #172033;
+            border: 2px solid #334155;
+            border-radius: 4px 24px 4px 24px;
+            color: #f8fafc;
+        }
+
+        .card-dark p {
+            color: #cbd5e1;
+        }
+
+        .card-dark button {
+            background: #34d399;
+            color: #064e3b;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card card-simple">
+            <h2>Simple Card</h2>
+            <p>A clean white card with a soft border, rounded corners and a subtle shadow.</p>
+            <button>Learn More</button>
+        </div>
+
+        <div class="card card-gradient">
+            <h2>Gradient Card</h2>
+            <p>A colourful gradient background with smooth, rounded corners and a modern look.</p>
+            <button>Explore</button>
+        </div>
+
+        <div class="card card-dark">
+            <h2>Dark Card</h2>
+            <p>A dark background with an asymmetric border-radius and a bright accent button.</p>
+            <button>Discover</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
